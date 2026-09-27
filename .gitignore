@@ -1,0 +1,23 @@
+# Keil uVision5 工程编译输出
+Objects/
+Listings/
+*.lst
+*.m51
+*.obj
+*.i
+*.lnp
+*.plg
+*.bak
+*.htm
+*.dep
+*.crf
+*.d
+*.o
+*.axf
+*.hex
+*.bin
+*.build_log.htm
+
+# Keil 用户界面状态文件（不同用户/机器会有差异）
+*.uvgui.*
+*.uvopt

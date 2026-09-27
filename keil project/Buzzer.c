@@ -1,35 +1,21 @@
 #include <REGX52.H>
-#include <INTRINS.H>
 #include "Delay.h"
-//·äÃùÆ÷¶Ë¿Ú
-sbit Buzzer=P2^5;
-/**
-	*@brief ·äÃùÆ÷Ë½ÓĞÑÓÊ±º¯Êı
-	*@param ÎŞ
-	*@retval 
-	*/
-void Buzzer_Delay500us()		//@11.0592MHz
-{
-	unsigned char i;
 
-	_nop_();
-	i = 227;
-	while (--i);
-}
+// èœ‚é¸£å™¨å¼•è„šï¼ˆP2^5ï¼‰
+sbit Buzzer = P2^5;
 
 /**
-	*@brief ·äÃùÆ÷·¢Éù
-	*@param ms£¬·¢ÉùÊ±³¤
-	*@retval ÎŞ
-	*/
-
+  * @brief  èœ‚é¸£å™¨å‘å£°
+  * @param  ms å‘å£°æ—¶é•¿ï¼ˆæ¯«ç§’ï¼‰
+  * @retval æ— 
+  * @note   é€šè¿‡ç¿»è½¬å¼•è„šäº§ç”Ÿæ–¹æ³¢é©±åŠ¨æ— æºèœ‚é¸£å™¨ï¼Œå‘¨æœŸçº¦2msï¼ŒéŸ³è°ƒçº¦500Hz
+  */
 void Buzzer_Time(unsigned int ms)
-{ 
-	unsigned int i;
-	for(i=0;i<ms*2;i++)
-	{
-		Buzzer=!Buzzer;
-		Delay(1);
-		Buzzer_Delay500us();
-	}
+{
+    unsigned int i;
+    for(i = 0; i < ms; i++)
+    {
+        Buzzer = !Buzzer;   // ç¿»è½¬ç”µå¹³äº§ç”Ÿæ–¹æ³¢
+        Delay(1);           // çº¦1ms
+    }
 }
